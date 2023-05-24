@@ -6,18 +6,19 @@
 </head>
 <body>
  <h1>윈도우 단축키</h1>
- <p> 1. 다음 중 고려시대 왕은?</p>
+ <p> 1. 바탕화면으로 바로 나가지는 단축키는?</p>
  <form name="form">
-  <input type="radio" name="kingName" value="v1">근초고왕<br>
-  <input type="radio" name="kingName" value="v2">의자왕<br>
-  <input type="radio" name="kingName" value="v3">충렬왕<br>
-  <input type="radio" name="kingName" value="v4">성종<br>
+  <input type="radio" name="key" value="v1">Window + A<br>
+  <input type="radio" name="key" value="v2">Window + D<br>
+  <input type="radio" name="key" value="v3">Window + G<br>
+  <input type="radio" name="key" value="v4">Window + X<br>
   <input type="button" name="선택" value="정답확인" onclick="myFucntion()">
  </form>
  <p id="check"></p>
  <script type="text/javascript">
   function myFucntion() {
-   if(form.kingName[2].checked==true) document.getElementById("check").innerHTML="정답입니다.";
+   if(form.key[1].checked==true) 
+		document.getElementById("check").innerHTML="정답입니다.";
    else document.getElementById("check").innerHTML="오답입니다.";
   }
  </script>
