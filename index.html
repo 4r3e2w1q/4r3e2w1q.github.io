@@ -1,15 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-<title>자료</title>
+ <meta charset="UTF-8">
+ <title>실습 프로그램</title>
 </head>
 <body>
-<hr>
-<ul>
-<iframe src="git.html" name="left" width="300" height="500">
-</iframe>
-<iframe src="rightframe.html" name= "right"
-width="500" height="500"></iframe>
-</ul>
+ <h1>윈도우 단축키</h1>
+ <p> 1. 바탕화면으로 바로 나가지는 단축키는?</p>
+ <form name="form">
+  <input type="radio" name="key" value="v1">Window + A<br>
+  <input type="radio" name="key" value="v2">Window + D<br>
+  <input type="radio" name="key" value="v3">Window + G<br>
+  <input type="radio" name="key" value="v4">Window + X<br>
+  <input type="button" name="선택" value="정답확인" onclick="myFucntion()">
+ </form>
+ <p id="check"></p>
+ <script type="text/javascript">
+  function myFucntion() {
+   if(form.key[1].checked==true) 
+		document.getElementById("check").innerHTML="정답입니다.";
+   else document.getElementById("check").innerHTML="오답입니다.";
+  }
+ </script>
 </body>
 </html>
