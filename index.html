@@ -2,16 +2,13 @@
 <head>
 <title>윈도우 단축키 퀴즈</title>
 </head>
-<p>윈도우 단축키 퀴즈</p>
+<h2>윈도우 단축키 퀴즈</h2>
 <hr> 
-
 <div id="quiz"> </div>
      <button id="submit" style="border:1px solid tomato; margin:2px; border-radius:5px; color:tomato;"> Submit </button>
 <div id="result"> </div>
 
 <script>
-
-//Model
 var quizData = [
      {
          question : '현재 활성화된 브라우저 닫기',
@@ -40,7 +37,7 @@ var quizData = [
                  c : 'Ctrl +F'
            },
         correct : 'a'
-     }
+     },
     {
            question : '바탕화면으로 바로 나가기',
            answers : {
@@ -49,7 +46,7 @@ var quizData = [
                  c : 'Alt + 오른쪽 화살표 '
            },
         correct : 'b'
-     }
+     },
      {
            question : '윈도우 탐색기 바로 열기',
            answers : {
@@ -58,7 +55,7 @@ var quizData = [
                  c : 'Alt + Page Down'
            },
         correct : 'a'
-     }
+     },
      {
            question : '작업관리자 바로 열기',
            answers : {
@@ -67,7 +64,7 @@ var quizData = [
                  c : 'Ctrl + Shift + Esc'
            },
         correct : 'c'
-     }
+     },
      {
            question : '열린 순서대로 항목을 순환',
            answers : {
@@ -76,8 +73,8 @@ var quizData = [
                  c : 'Ctrl + 화살표 키'
            },
         correct : 'b'
-     }
-    {
+     },
+     {
            question : '문서나 창에 있는 모든 항목을 선택',
            answers : {
                  a : 'Ctrl + A',
@@ -85,7 +82,7 @@ var quizData = [
                  c : 'Ctrl + 스페이스바'
            },
         correct : 'a'
-     }
+     },
      {
            question : '가상 데스크탑 이동',
            answers : {
@@ -94,7 +91,7 @@ var quizData = [
                  c : '윈도우키 + A'
            },
         correct : 'b'
-     }
+     },
      {
            question : '화면 부분의 스크린샷을 생성',
            answers : {
@@ -103,7 +100,7 @@ var quizData = [
                  c : '윈도우 + Shift + S'
            },
         correct : 'c'
-     }
+     },
      {
            question : '클립보드 실행',
            answers : {
@@ -112,7 +109,7 @@ var quizData = [
                  c : '윈도우 + V'
            },
         correct : 'c'
-     }
+     },
      {
            question : '창을 최대화',
            answers : {
@@ -121,7 +118,7 @@ var quizData = [
                  c : 'Alt + 선택 키'
            },
         correct : 'a'
-     }    
+     },    
      { 
            question : '화면에서 현재 앱을 제거하거나, 바탕 화면 창을 최소화',
            answers : {
@@ -130,7 +127,7 @@ var quizData = [
                  c : '윈도우 + 아래쪽 화살표'
            },
         correct : 'c'
-       }
+     },
      { 
            question : '탭에서 앞으로 이동',
            answers : {
@@ -139,7 +136,7 @@ var quizData = [
                  c : 'Ctrl + F'
            },
         correct : 'b'
-       }
+     },
      { 
            question : '탭에서 뒤로 이동',
            answers : {
@@ -151,10 +148,47 @@ var quizData = [
        }
 ]
 
- var show = document.getElementById('quiz');
- var submi = document.getElementById('submit');
- var resultShow = document.getElementById('result');
+var show = document.getElementById('quiz');
+var submi = document.getElementById('submit');
+var resultShow = document.getElementById('result');
  
- function quizBank(){
-      var output = [ ]; 
-       quizData.forEach( 
+function buildQuiz(){
+      var output = [ ]; //퀴즈와 정답이 저장된 배열
+       quizData.forEach( //데이터 불러오기 
+           (Question, questionNum) => { 
+                       var answers = [];  //퀴즈 선택지 배열     
+                       for(item in Question.answers){  
+                                   answers.push(`<label>
+                                                <input type="radio" name="question${questionNum}" value="${item}">
+                                                    ${item} : ${Question.answers[item]}
+                                                </label>`);
+                          }
+                             output.push(`<div class="question"> ${Question.question}</div>
+                                          <div class="answer">${answers.join('')}</div>`);
+                    }              
+       );
+          show.innerHTML = output.join('</br>');// 퀴즈사이에 공백추가
+    }
+    
+function showResult(){
+         var answerDisplays = show.querySelectorAll('.answer');  //answer 이름의 클래스를 배열로 저장하기  
+           let numCorrect = 0; //퀴즈의 정답기록
+
+            quizData.forEach( (Question, questionNum)=>{  
+                   var answerDisplay = answerDisplays[questionNum]; //answerDisplays배열을 index별로 불러오기
+                   var selector = `input[name=question${questionNum}]:checked`;  //input태그의 속성값 지정하기
+                   var userAnswer = (answerDisplay.querySelector(selector) || {}).value;  //input check값 저장 
+
+                    //user가 선택한 값과 정답 검증
+                    if(userAnswer === Question.correct){    
+                            numCorrect++;
+                            answerDisplays[questionNum].style.color = 'lightgreen';
+                    }else{
+                            answerDisplays[questionNum].style.color = 'red';
+                    }
+            });
+              resultShow.innerHTML = `${numCorrect} out of ${quizData.length}`; 
+    }
+    submit.addEventListener('click',showResult);   
+buildQuiz(); 
+</script>
