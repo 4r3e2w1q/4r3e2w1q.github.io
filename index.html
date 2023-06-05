@@ -169,7 +169,7 @@ function buildQuiz(){
        );
           show.innerHTML = output.join('</br>');// 퀴즈사이에 공백추가
     }
-    
+     
 function showResult(){
          var answerDisplays = show.querySelectorAll('.answer');  //answer 이름의 클래스를 배열로 저장하기  
            let numCorrect = 0; //퀴즈의 정답기록
@@ -187,7 +187,7 @@ function showResult(){
                             answerDisplays[questionNum].style.color = 'red';
                     }
             });
-              resultShow.innerHTML = `${quizData.length}개중 ${numCorrect}개 맞추셨습니다.`;
+              resultShow.innerHTML = `${quizData.length}개중 ${numCorrect}개 맞추셨습니다.`; 
     }
     submit.addEventListener('click',showResult);   
 buildQuiz(); 
