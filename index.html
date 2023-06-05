@@ -26,9 +26,9 @@ var quizData = [
      {
          question : '닫힌 창/탭 복구',
          answers : {
-             a : '',
+             a : '윈도우 +',
              b : ' Ctrl + Shift + T ',
-             c : ''
+             c : 'Ctrl + Shift + Tab'
          },
         correct : 'b'
      },
@@ -36,17 +36,17 @@ var quizData = [
            question : '창을 내리지 않고 바탕화면 확인',
            answers : {
                  a : '윈도우 + ,',
-                 b : '',
-                 c : ''
+                 b : 'Ctrl+W',
+                 c : 'Ctrl +F'
            },
         correct : 'a'
      }
     {
            question : '바탕화면으로 바로 나가기',
            answers : {
-                 a : '',
+                 a : 'Ctrl + Y',
                  b : '윈도우 + D',
-                 c : ''
+                 c : 'Alt + 오른쪽 화살표 '
            },
         correct : 'b'
      }
@@ -54,16 +54,16 @@ var quizData = [
            question : '윈도우 탐색기 바로 열기',
            answers : {
                  a : '윈도우 + E',
-                 b : '',
-                 c : ''
+                 b : '윈도우 + L',
+                 c : 'Alt + Page Down'
            },
         correct : 'a'
      }
      {
            question : '작업관리자 바로 열기',
            answers : {
-                 a : '',
-                 b : '',
+                 a : 'Ctrl + Shift + 화살표 키',
+                 b : 'Ctrl + U',
                  c : 'Ctrl + Shift + Esc'
            },
         correct : 'c'
@@ -71,9 +71,9 @@ var quizData = [
      {
            question : '열린 순서대로 항목을 순환',
            answers : {
-                 a : '',
+                 a : ' Ctrl + B',
                  b : 'Alt + Esc',
-                 c : ''
+                 c : 'Ctrl + 화살표 키'
            },
         correct : 'b'
      }
@@ -81,25 +81,25 @@ var quizData = [
            question : '문서나 창에 있는 모든 항목을 선택',
            answers : {
                  a : 'Ctrl + A',
-                 b : '',
-                 c : ''
+                 b : '윈도우키 + I ',
+                 c : 'Ctrl + 스페이스바'
            },
         correct : 'a'
      }
      {
            question : '가상 데스크탑 이동',
            answers : {
-                 a : '',
+                 a : '윈도우키 + S ',
                  b : 'Ctrl + 윈도우 + 방항키(좌,우)',
-                 c : ''
+                 c : '윈도우키 + A'
            },
         correct : 'b'
      }
      {
            question : '화면 부분의 스크린샷을 생성',
            answers : {
-                 a : '',
-                 b : '',
+                 a : 'Ctrl + 아래쪽 화살표    ',
+                 b : 'Alt + P',
                  c : '윈도우 + Shift + S'
            },
         correct : 'c'
@@ -107,7 +107,7 @@ var quizData = [
      {
            question : '클립보드 실행',
            answers : {
-                 a : '',
+                 a : 'Ctrl + Home(기록 탐색)',
                  b : '',
                  c : '윈도우 + V'
            },
@@ -117,16 +117,16 @@ var quizData = [
            question : '창을 최대화',
            answers : {
                  a : '윈도우 + 위쪽 화살표',
-                 b : '',
-                 c : ''
+                 b : 'Ctrl + 위쪽 화살표 ',
+                 c : 'Alt + 선택 키'
            },
         correct : 'a'
      }    
      { 
            question : '화면에서 현재 앱을 제거하거나, 바탕 화면 창을 최소화',
            answers : {
-                 a : '',
-                 b : '',
+                 a : 'Shift + Delete',
+                 b : 'Ctrl + 위쪽 화살표 ',
                  c : '윈도우 + 아래쪽 화살표'
            },
         correct : 'c'
@@ -134,18 +134,18 @@ var quizData = [
      { 
            question : '탭에서 앞으로 이동',
            answers : {
-                 a : '',
+                 a : 'Alt + Enter',
                  b : 'Ctrl + Tab',
-                 c : ''
+                 c : 'Ctrl + F'
            },
         correct : 'b'
        }
      { 
            question : '탭에서 뒤로 이동',
            answers : {
-                 a : '',
+                 a : 'Ctrl + Shift + E',
                  b : 'Ctrl + Shift + Tab    ',
-                 c : ''
+                 c : 'Num Lock + 별표(*)'
            },
         correct : 'b'
        }
@@ -157,3 +157,4 @@ var quizData = [
  
  function quizBank(){
       var output = [ ]; 
+       quizData.forEach( 
