@@ -80,11 +80,11 @@ var quizData = [
     {
            question : '문서나 창에 있는 모든 항목을 선택',
            answers : {
-                 a : '',
-                 b : 'Ctrl + A',
+                 a : 'Ctrl + A',
+                 b : '',
                  c : ''
            },
-        correct : 'b'
+        correct : 'a'
      }
      {
            question : '가상 데스크탑 이동',
@@ -99,52 +99,52 @@ var quizData = [
            question : '화면 부분의 스크린샷을 생성',
            answers : {
                  a : '',
-                 b : '윈도우 + Shift + S',
-                 c : ''
+                 b : '',
+                 c : '윈도우 + Shift + S'
            },
-        correct : 'b'
+        correct : 'c'
      }
      {
            question : '클립보드 실행',
            answers : {
                  a : '',
-                 b : '윈도우 + V',
-                 c : ''
+                 b : '',
+                 c : '윈도우 + V'
            },
-        correct : 'b'
+        correct : 'c'
      }
      {
-           question : '',
+           question : '창을 최대화',
            answers : {
-                 a : '',
+                 a : '윈도우 + 위쪽 화살표',
                  b : '',
                  c : ''
            },
-        correct : 'b'
+        correct : 'a'
      }    
      { 
-           question : '',
+           question : '화면에서 현재 앱을 제거하거나, 바탕 화면 창을 최소화',
            answers : {
                  a : '',
                  b : '',
+                 c : '윈도우 + 아래쪽 화살표'
+           },
+        correct : 'c'
+       }
+     { 
+           question : '탭에서 앞으로 이동',
+           answers : {
+                 a : '',
+                 b : 'Ctrl + Tab',
                  c : ''
            },
         correct : 'b'
        }
      { 
-           question : '',
+           question : '탭에서 뒤로 이동',
            answers : {
                  a : '',
-                 b : '',
-                 c : ''
-           },
-        correct : 'b'
-       }
-     { 
-           question : '',
-           answers : {
-                 a : '',
-                 b : '',
+                 b : 'Ctrl + Shift + Tab    ',
                  c : ''
            },
         correct : 'b'
@@ -155,3 +155,5 @@ var quizData = [
  var submi = document.getElementById('submit');
  var resultShow = document.getElementById('result');
  
+ function quizBank(){
+      var output = [ ]; 
