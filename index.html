@@ -9,7 +9,7 @@
 <div id="result"> </div>
 
 <script>
-var quizData = [
+var quizBank = [
      {
          question : '현재 활성화된 브라우저 닫기',
          answers : {
@@ -154,7 +154,7 @@ var resultShow = document.getElementById('result');
  
 function buildQuiz(){
       var output = [ ]; //퀴즈와 정답이 저장된 배열
-       quizData.forEach( //데이터 불러오기 
+       quizBank.forEach( //데이터 불러오기 
            (Question, questionNum) => { 
                        var answers = [];  //퀴즈 선택지 배열     
                        for(item in Question.answers){  
@@ -174,7 +174,7 @@ function showResult(){
          var answerDisplays = show.querySelectorAll('.answer');  //answer 이름의 클래스를 배열로 저장하기  
            let numCorrect = 0; //퀴즈의 정답기록
 
-            quizData.forEach( (Question, questionNum)=>{  
+            quizBank.forEach( (Question, questionNum)=>{  
                    var answerDisplay = answerDisplays[questionNum]; //answerDisplays배열을 index별로 불러오기
                    var selector = `input[name=question${questionNum}]:checked`;  //input태그의 속성값 지정하기
                    var userAnswer = (answerDisplay.querySelector(selector) || {}).value;  //input check값 저장 
@@ -187,7 +187,7 @@ function showResult(){
                             answerDisplays[questionNum].style.color = 'red';
                     }
             });
-              resultShow.innerHTML = `${quizData.length}개중 ${numCorrect}개 맞추셨습니다.`; 
+              resultShow.innerHTML = `${quizBank.length}개중 ${numCorrect}개 맞추셨습니다.`; 
     }
     submit.addEventListener('click',showResult);   
 buildQuiz(); 
